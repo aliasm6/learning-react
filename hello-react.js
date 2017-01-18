@@ -1,13 +1,16 @@
-var hello = React.createElement('p', null, 'Hello, World!');
+const hello = React.createElement('p', null, 'Hello, World!');
 
-var notesList =
-  React.createElement('section', {},
-    React.createElement('h1', {}, 'You have 3 notes'),
-    React.createElement('ul', {},
-      React.createElement('li', {}, 'Learn React'),
-      React.createElement('li', {}, 'Get Lunch'),
-      React.createElement('li', {}, 'Learn React Native')
-    )
+const notes = [
+  { id: 1, content: 'Learn React' },
+  { id: 2, content: 'Get Lunch' },
+  { id: 3, content: 'Learn React Native' }
+]
+
+const notesListItems = notes.map(message => React.createElement('li', { key: message.id }, message.content))
+
+const notesList = React.createElement('section', {},
+  React.createElement('h1', {}, 'You have ', notes.length, ' reminders'),
+  React.createElement('ul', {}, notesListItems)
 )
 
 ReactDOM.render(notesList, document.getElementById('entry-point'))
