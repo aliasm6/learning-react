@@ -1,4 +1,13 @@
 var hello = React.createElement('p', null, 'Hello, World!');
 
-// Checkout what this does by opening your HTML file in the browser
-ReactDOM.render(hello, document.getElementById('entry-point'));
+var notesList =
+  React.createElement('section', {},
+    React.createElement('h1', {}, 'You have 3 notes'),
+    React.createElement('ul', {},
+      React.createElement('li', {}, 'Learn React'),
+      React.createElement('li', {}, 'Get Lunch'),
+      React.createElement('li', {}, 'Learn React Native')
+    )
+)
+
+ReactDOM.render(notesList, document.getElementById('entry-point'))
