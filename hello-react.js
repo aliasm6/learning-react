@@ -25,14 +25,11 @@ class Note extends React.Component {
 
 class NotesList extends React.Component {
   renderNote(note) {
-    return React.createElement(Note, {
-      key: note.id,
-      content: note.content
-    })
+    return <Note key={ note.id } content={ note.content } />
   }
   render() {
-    return React.createElement('ul', {}, this.props.notes.map(this.renderNote))
+    return <ul>{ this.props.notes.map(this.renderNote) }</ul>
   }
 }
 
-ReactDOM.render(React.createElement(App, { notes: notes }), document.getElementById('entry-point'))
+ReactDOM.render(<App notes={ notes } />, document.getElementById('entry-point'))
