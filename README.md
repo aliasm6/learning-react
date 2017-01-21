@@ -29,4 +29,11 @@ const elementExample = React.createElement("type",[props],[...children]);
   ```
 1. props - Props create a way to send instructions to components
 1. One-way data flow - Information in React flows downward so when a React component receives props (instructions), it knows to re-render
-1.
+1. JSX - extension to javaScript that allows for simple html-like syntax
+  Example:
+  ```javaScript
+  //Instead of
+  React.createElement('p', {}, 'Hello World!')
+  //We can just say
+  <p>Wow, that was easy!</p>
+  ```
