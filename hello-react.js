@@ -8,16 +8,18 @@ class App extends React.Component {
   render() {
     let notes = this.props.notes
 
-    return React.createElement('section', {},
-      React.createElement('h1', {}, 'You have ', notes.length, ' notes'),
-      React.createElement(NotesList, {notes: notes})
+    return (
+      <section>
+        <h1>You have { notes.length }</h1>
+        <NotesList notes={ notes } />
+      </section>
     )
   }
 }
 
 class Note extends React.Component {
   render() {
-    return React.createElement('li', {}, this.props.content)
+    return <li>{ this.props.content }</li>
   }
 }
 
