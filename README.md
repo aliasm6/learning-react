@@ -37,3 +37,4 @@ const elementExample = React.createElement("type",[props],[...children]);
   //We can just say
   <p>Wow, that was easy!</p>
   ```
+1. Babel - javaScript compiler that includes a JSX processor 
