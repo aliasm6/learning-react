@@ -10,10 +10,31 @@ class App extends React.Component {
 
     return (
       <section>
-        <h1>You have { notes.length }</h1>
+        <h1>You have { notes.length } notes</h1>
         <NotesList notes={ notes } />
       </section>
     )
+  }
+
+  formWasSubmitted(content) {
+    alert('New note: ' + content)
+  }
+}
+
+class NotesForm extends React.Component {
+  render() {
+    return (
+      <form ref="form" onSubmit={ this.handleSubmission }>
+        <input type="text" ref="content" />
+        <input type="submit" value="Add Note" />
+      </form>
+    )
+  }
+
+  handleSubmission(event) {
+    event.preventDefault()
+    this.props.onSubmit(this.refs.content)
+    this.refs.form.reset()
   }
 }
 
