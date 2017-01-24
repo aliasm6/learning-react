@@ -4,9 +4,9 @@
 
 https://share.viget.com/sxsw/learning-react/lessons/0-intro/index.html
 
-#### I will be following and recording my progress.
+I will be following and recording my progress.
 
-#### Key Terms:
+### Key Terms:
 
 1. Element - React's most primitive data type. "Chunks of data that describe how to build a UI. Think of them as low level instructions; the assembly of React."
   Example:
@@ -37,4 +37,4 @@ const elementExample = React.createElement("type",[props],[...children]);
   //We can just say
   <p>Wow, that was easy!</p>
   ```
-1. Synthetic Event System - React's wrapper of the browser's native event system. When event handler's are set up in React they bubble up to the browser's `window` where they are intercepted by react and communicated to it's elements 
+1. Synthetic Event System - React's wrapper of the browser's native event system. When event handler's are set up in React they bubble up to the browser's `window` where they are intercepted by react and communicated to it's elements
