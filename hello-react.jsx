@@ -4,17 +4,24 @@ const notes = [
   { id: 3, content: 'Learn React Native' }
 ]
 
-class App extends React.Component {
-  render() {
-    let notes = this.props.notes
+class NotesForm extends React.Component {
 
+  handleSubmission(event) {
+    event.preventDefault()
+    this.props.onSubmit(this.refs.content)
+    this.refs.form.reset()
+  }
+  
+  render() {
     return (
-      <section>
-        <h1>You have { notes.length }</h1>
-        <NotesList notes={ notes } />
-      </section>
+      <form ref="form" onSubmit={ this.handleSubmission }>
+        <input type="text" ref="content" />
+        <input type="submit" value="Add Note" />
+      </form>
     )
   }
+
+
 }
 
 class Note extends React.Component {
@@ -31,5 +38,24 @@ class NotesList extends React.Component {
     return <ul>{ this.props.notes.map(this.renderNote) }</ul>
   }
 }
+
+class App extends React.Component {
+  render() {
+    let notes = this.props.notes
+
+    return (
+      <section>
+        <h1>You have { notes.length } notes</h1>
+        <NotesList notes={ notes } />
+        <NotesForm onSubmit={ this.formWasSubmitted } />
+      </section>
+    )
+  }
+
+  formWasSubmitted(content) {
+    alert('New note: ' + content)
+  }
+}
+
 
 ReactDOM.render(<App notes={ notes } />, document.getElementById('entry-point'))
