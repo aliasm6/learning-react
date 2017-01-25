@@ -5,13 +5,6 @@ const notes = [
 ]
 
 class NotesForm extends React.Component {
-
-  handleSubmission(event) {
-    event.preventDefault()
-    this.props.onSubmit(this.refs.content)
-    this.refs.form.reset()
-  }
-  
   render() {
     return (
       <form ref="form" onSubmit={ this.handleSubmission }>
@@ -21,7 +14,11 @@ class NotesForm extends React.Component {
     )
   }
 
-
+  handleSubmission(event) {
+    event.preventDefault()
+    this.props.onSubmit(this.refs.content)
+    this.refs.form.reset()
+  }
 }
 
 class Note extends React.Component {
