@@ -38,3 +38,4 @@ const elementExample = React.createElement("type",[props],[...children]);
   <p>Wow, that was easy!</p>
   ```
 1. Synthetic Event System - React's wrapper of the browser's native event system. When event handler's are set up in React they bubble up to the browser's `window` where they are intercepted by react and communicated to it's elements
+1. State - Internal to each component. Used to keep track of component's local data

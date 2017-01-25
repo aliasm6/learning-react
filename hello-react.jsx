@@ -1,9 +1,3 @@
-const notes = [
-  { id: 1, content: 'Learn React' },
-  { id: 2, content: 'Get Lunch' },
-  { id: 3, content: 'Learn React Native' }
-]
-
 class NotesForm extends React.Component {
   render() {
     return (
@@ -37,9 +31,14 @@ class NotesList extends React.Component {
 }
 
 class App extends React.Component {
+  getInitialState() {
+    notes: [
+      { id: 1, content: 'Learn React' },
+      { id: 2, content: 'Get Lunch' },
+      { id: 3, content: 'Learn React Native' }
+    ]
+  }
   render() {
-    let notes = this.props.notes
-
     return (
       <section>
         <h1>You have { notes.length } notes</h1>
@@ -50,7 +49,13 @@ class App extends React.Component {
   }
 
   formWasSubmitted(content) {
-    alert('New note: ' + content)
+    var note = {
+      id: Date.now().toString(), // cheap trick for unique ids, don't do this in production!
+      content: content
+    }
+    this.setState({
+      notes: this.state.notes.concat(note)
+    })
   }
 }
 
