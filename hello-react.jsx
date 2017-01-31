@@ -48,11 +48,12 @@ class App extends React.Component {
     )
   }
 
-  formWasSubmitted(content) {
+  formWasSubmitted (content) {
     var note = {
       id: Date.now().toString(), // cheap trick for unique ids, don't do this in production!
       content: content
     }
+
     this.setState({
       notes: this.state.notes.concat(note)
     })
