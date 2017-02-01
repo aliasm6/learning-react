@@ -60,5 +60,4 @@ class App extends React.Component {
   }
 }
 
-
 ReactDOM.render(<App notes={ notes } />, document.getElementById('entry-point'))
