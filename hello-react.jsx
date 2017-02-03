@@ -1,3 +1,9 @@
+// const notes = [
+//   { id: 1, content: 'Learn React' },
+//   { id: 2, content: 'Get Lunch' },
+//   { id: 3, content: 'Learn React Native' }
+// ]
+
 class NotesForm extends React.Component {
   render() {
     return (
@@ -32,7 +38,7 @@ class NotesList extends React.Component {
 
 class App extends React.Component {
   getInitialState() {
-    notes: [
+    const notes = [
       { id: 1, content: 'Learn React' },
       { id: 2, content: 'Get Lunch' },
       { id: 3, content: 'Learn React Native' }
@@ -59,6 +65,4 @@ class App extends React.Component {
     })
   }
 }
-
-
 ReactDOM.render(<App notes={ notes } />, document.getElementById('entry-point'))
