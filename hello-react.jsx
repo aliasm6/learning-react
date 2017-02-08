@@ -1,8 +1,8 @@
-// const notes = [
-//   { id: 1, content: 'Learn React' },
-//   { id: 2, content: 'Get Lunch' },
-//   { id: 3, content: 'Learn React Native' }
-// ]
+const notes = [
+  { id: 1, content: 'Learn React' },
+  { id: 2, content: 'Get Lunch' },
+  { id: 3, content: 'Learn React Native' }
+]
 
 class NotesForm extends React.Component {
   render() {
@@ -48,7 +48,7 @@ class App extends React.Component {
     return (
       <section>
         <h1>You have { notes.length } notes</h1>
-        <NotesList notes={ notes } />
+        <NotesList note={ note } />
         <NotesForm onSubmit={ this.formWasSubmitted } />
       </section>
     )
@@ -65,4 +65,5 @@ class App extends React.Component {
     })
   }
 }
-ReactDOM.render(<App notes={ notes } />, document.getElementById('entry-point'))
+
+ReactDOM.render(React.createElement(App, { notes: notes }), document.getElementById('entry-point'))
